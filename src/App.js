@@ -3,6 +3,12 @@ import './App.css';
 import { Recipes } from './Recipes';
 import  { useState } from 'react';
 import { AddRecipes } from './AddRecipes';
+import{Switch,Route,useHistory} from "react-router-dom";
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';  
+import { Button } from '@mui/material';
+import { NotFound } from './NotFound';
+import { Home } from './Home';
 function App() {
   const INITIAL_RECIPES=[
     {
@@ -62,13 +68,33 @@ preparation:"Making:This biryani is cooked by dum style where the chicken and ri
                       },
                  ];
                  const [recipes,setRecipes]=useState(INITIAL_RECIPES); 
+                 const history=useHistory("");
         return (
        <div className="App">
-       {recipes.map((rcp)=>(<Recipes name={rcp.name} picture={rcp.picture}chef={rcp.chef}cuisine={rcp.cuisine}cooktimehours={rcp.cooktimehours}ingredients={rcp.ingredients}preparation={rcp.preparation} /> ))}
+       <AppBar position="static">
+  <Toolbar variant="dense" >
+  <Button onClick={()=>history.push("/home")} variant="text" color="inherit">Home</Button>
+  <Button onClick={()=>history.push("/recipes")} variant="text" color="inherit">RECIPES</Button>
+  <Button onClick={()=>history.push("/add-recipes")} variant="text" color="inherit">ADD RECIPES</Button>
+  </Toolbar>
+</AppBar>
+      
+       <Switch>
+       <Route  exact path="/home">
+       <Home/>
+       </Route>
+       <Route path="/recipes">
+       {recipes.map((rcp)=>(<Recipes name={rcp.name} picture={rcp.picture}chef={rcp.chef}cuisine={rcp.cuisine}cooktimehours={rcp.cooktimehours}ingredients={rcp.ingredients}preparation={rcp.preparation} index={rcp.index}/> ))}
+       </Route>
+       <Route path="/add-recipes">
        <AddRecipes recipes={recipes} setRecipes={setRecipes}/>
+       </Route>
+       <Route path="**">
+       <NotFound/>
+       </Route>
+       </Switch>
       </div>
   );
         }
-
 
 export default App;

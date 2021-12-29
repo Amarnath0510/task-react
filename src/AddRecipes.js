@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { useHistory } from 'react-router-dom';
 
 export function AddRecipes({ recipes, setRecipes }) {
-
+  const history=useHistory("");
   const [name, setName] = useState("");
   const [chef, setChef] = useState("");
   const [cuisine, setCuisine] = useState("");
@@ -24,9 +25,10 @@ export function AddRecipes({ recipes, setRecipes }) {
     };
     console.log(newRecipe);
     setRecipes([...recipes, newRecipe]);
+    history.push("/recipes");
   };
   return (
-    <div>
+    <div className="add-recipes">
       <TextField
         value={name}
         onChange={(event) => setName(event.target.value)}
@@ -75,7 +77,8 @@ export function AddRecipes({ recipes, setRecipes }) {
         id="standard-basic"
         label="Enter a Preparation method"
         variant="standard" />
-      <Button onClick={addRecipe} variant="outlined">Add Recipe</Button>
+      <Button onClick={addRecipe } variant="outlined">Add Recipe</Button>
+     
     </div>
   );
 }
