@@ -1,10 +1,4 @@
-// import logo from './logo.svg';
-import './App.css';
-import { Recipes } from './Recipes';
-import  { useState } from 'react';
-import { AddRecipes } from './AddRecipes';
-function App() {
-  const INITIAL_RECIPES=[
+const recipes=[
     {
 name:"Paradise Biryani",
 chef:" From Ali Hemati",
@@ -61,14 +55,3 @@ preparation:"Making:This biryani is cooked by dum style where the chicken and ri
                     preparation:" Making:Heat the oven to 200C/180C fan/gas 6. Bring a medium pan of water to the boil. Add the potatoes and cook for 8 mins. Drain and leave to steam-dry in a colander for a few minutes. Toss the potatoes with ½ of the oil and plenty of seasoning in a baking tray. ",
                       },
                  ];
-                 const [recipes,setRecipes]=useState(INITIAL_RECIPES); 
-        return (
-       <div className="App">
-       {recipes.map((rcp)=>(<Recipes name={rcp.name} picture={rcp.picture}chef={rcp.chef}cuisine={rcp.cuisine}cooktimehours={rcp.cooktimehours}ingredients={rcp.ingredients}preparation={rcp.preparation} /> ))}
-       <AddRecipes recipes={recipes} setRecipes={setRecipes}/>
-      </div>
-  );
-        }
-
-
-export default App;
