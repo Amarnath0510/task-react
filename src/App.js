@@ -84,7 +84,7 @@ preparation:"Making:This biryani is cooked by dum style where the chicken and ri
        <Home/>
        </Route>
        <Route path="/recipes">
-       {recipes.map((rcp)=>(<Recipes name={rcp.name} picture={rcp.picture}chef={rcp.chef}cuisine={rcp.cuisine}cooktimehours={rcp.cooktimehours}ingredients={rcp.ingredients}preparation={rcp.preparation} index={rcp.index}/> ))}
+       {recipes.map((rcp)=>(<Recipes name={rcp.name} picture={rcp.picture}chef={rcp.chef}cuisine={rcp.cuisine}cooktimehours={rcp.cooktimehours}ingredients={rcp.ingredients}preparation={rcp.preparation} /> ))}
        </Route>
        <Route path="/add-recipes">
        <AddRecipes recipes={recipes} setRecipes={setRecipes}/>
