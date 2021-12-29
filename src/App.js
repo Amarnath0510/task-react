@@ -89,9 +89,7 @@ preparation:"Making:This biryani is cooked by dum style where the chicken and ri
        <Route path="/add-recipes">
        <AddRecipes recipes={recipes} setRecipes={setRecipes}/>
        </Route>
-       <Route path="**">
-       <NotFound/>
-       </Route>
+    
        </Switch>
       </div>
   );
