@@ -55,3 +55,4 @@ preparation:"Making:This biryani is cooked by dum style where the chicken and ri
                     preparation:" Making:Heat the oven to 200C/180C fan/gas 6. Bring a medium pan of water to the boil. Add the potatoes and cook for 8 mins. Drain and leave to steam-dry in a colander for a few minutes. Toss the potatoes with ½ of the oil and plenty of seasoning in a baking tray. ",
                       },
                  ];
+                 <Button onClick={()=>history.push("/home")} variant="text" color="inherit">Home</Button>

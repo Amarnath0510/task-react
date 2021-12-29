@@ -73,14 +73,14 @@ preparation:"Making:This biryani is cooked by dum style where the chicken and ri
        <div className="App">
        <AppBar position="static">
   <Toolbar variant="dense" >
-  <Button onClick={()=>history.push("/home")} variant="text" color="inherit">Home</Button>
+   
   <Button onClick={()=>history.push("/recipes")} variant="text" color="inherit">RECIPES</Button>
   <Button onClick={()=>history.push("/add-recipes")} variant="text" color="inherit">ADD RECIPES</Button>
   </Toolbar>
 </AppBar>
       
        <Switch>
-       <Route  exact path="/home">
+       <Route  exact path="/">
        <Home/>
        </Route>
        <Route path="/recipes">
