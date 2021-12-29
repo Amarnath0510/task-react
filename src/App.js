@@ -7,7 +7,7 @@ import{Switch,Route,useHistory} from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';  
 import { Button } from '@mui/material';
-import { NotFound } from './NotFound';
+
 import { Home } from './Home';
 function App() {
   const INITIAL_RECIPES=[
