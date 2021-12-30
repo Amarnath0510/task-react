@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
 
-export function AddRecipes({ recipes, setRecipes }) {
+export function AddRecipes({recipes,setRecipes}) {
   const history=useHistory("");
   const [name, setName] = useState("");
   const [chef, setChef] = useState("");
@@ -24,9 +24,24 @@ export function AddRecipes({ recipes, setRecipes }) {
       preparation,
     };
     console.log(newRecipe);
+
     setRecipes([...recipes, newRecipe]);
     history.push("/recipes");
   };
+
+
+// fetch(`https://616b1eb916e7120017fa1233.mockapi.io/Recipes`,{
+//   method:"POST",
+//   body:JSON.stringify(newRecipe),
+//   headers:{
+//     "Content-Type":"application/json",
+//   }
+// }).then(()=>history.push("/recipes"));
+
+
+//      setRecipes([...recipes, newRecipe]);
+//     history.push("/recipes");
+//   };
   return (
     <div className="add-recipes">
       <TextField
@@ -80,5 +95,8 @@ export function AddRecipes({ recipes, setRecipes }) {
       <Button onClick={addRecipe } variant="outlined">Add Recipe</Button>
      
     </div>
+
+
+
   );
 }
