@@ -95,7 +95,7 @@ function App() {
        <Home/>
        </Route>
        <Route path="/recipes">
-       {recipes.map((rcp)=>(<Recipes name={rcp.name} picture={rcp.picture}chef={rcp.chef}cuisine={rcp.cuisine}cooktimehours={rcp.cooktimehours}ingredients={rcp.ingredients}preparation={rcp.preparation} /> ))}
+       {recipes.map((rcp,idx)=>(<Recipes key={idx} name={rcp.name} picture={rcp.picture}chef={rcp.chef}cuisine={rcp.cuisine}cooktimehours={rcp.cooktimehours}ingredients={rcp.ingredients}preparation={rcp.preparation} /> ))}
        </Route>
        <Route path="/add-recipes">
        <AddRecipes recipes={recipes} setRecipes={setRecipes} />
